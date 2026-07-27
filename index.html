@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>International Leadership Awards — Душанбе, 11–12 сентября 2026</title>
+<meta name="description" content="International Leadership Awards — церемония 2026 года в Душанбе. Номинации открыты.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ tokens ============ */
+:root{
+  --ink:#060915;
+  --ink-2:#080C1B;
+  --ink-3:#0C1226;
+  --gold:#D8B25C;
+  --gold-lt:#F2DFA8;
+  --turq:#55E0CE;
+  --paper:#EDE7DA;
+  --dim:rgba(237,231,218,.62);
+  --line:rgba(216,178,92,.22);
+  --flash:0; --fx:50%; --fy:35%;
+  --pad:clamp(1.2rem,5vw,4rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:"Manrope",system-ui,sans-serif;
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--turq);outline-offset:3px}
+
+/* ============ layout helpers ============ */
+.wrap{width:min(1240px,100% - var(--pad)*2);margin-inline:auto}
+.section{padding:clamp(4.5rem,11vh,8.5rem) 0;position:relative}
+.section + .section{border-top:1px solid rgba(216,178,92,.11)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-size:.66rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.5rem;
+}
+.eyebrow::before{content:"";width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+
+.h2{
+  font-family:"Prata",Georgia,serif;font-weight:400;
+  font-size:clamp(1.9rem,4.6vw,3.4rem);
+  line-height:1.12;letter-spacing:-.01em;
+}
+.lede{max-width:56ch;margin-top:1.2rem;color:var(--dim);font-size:clamp(.95rem,1.7vw,1.08rem)}
+.rule{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:2.6rem 0}
+
+.btn{
+  display:inline-block;padding:1.02em 2.2em;
+  font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;border:1px solid var(--gold);
+  transition:background-color .35s,color .35s,transform .35s,border-color .35s;
+}
+.btn--solid{background:var(--gold);color:#0A0D18}
+.btn--solid:hover{background:var(--gold-lt);border-color:var(--gold-lt);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--gold-lt);border-color:rgba(216,178,92,.45)}
+.btn--ghost:hover{border-color:var(--gold);background:rgba(216,178,92,.09);transform:translateY(-2px)}
+
+.mono{
+  display:grid;place-items:center;
+  font-family:"Prata",Georgia,serif;
+  color:var(--gold);letter-spacing:.06em;
+  background:linear-gradient(160deg,rgba(216,178,92,.13),rgba(216,178,92,.02));
+  border:1px solid var(--line);
+}
+
+/* ============ header ============ */
+.hd{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;gap:2rem;
+  padding:.9rem var(--pad);
+  transition:background-color .4s,backdrop-filter .4s,border-color .4s,padding .4s;
+  border-bottom:1px solid transparent;
+}
+.hd.is-stuck{
+  background:rgba(6,9,21,.86);
+  backdrop-filter:blur(14px);
+  border-bottom-color:rgba(216,178,92,.16);
+  padding-block:.6rem;
+}
+.hd__brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.hd__mark{width:34px;height:34px;font-size:.72rem}
+.hd__logo{
+  width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  box-shadow:0 0 0 1px rgba(216,178,92,.4),0 2px 12px rgba(0,0,0,.5);
+  background:#fff;
+}
+.hd__name{
+  font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--paper);line-height:1.35;max-width:9rem;
+}
+.hd__nav{display:flex;gap:1.8rem;margin-left:auto}
+.hd__nav a{
+  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  text-decoration:none;color:var(--dim);
+  padding:.4rem 0;position:relative;transition:color .3s;
+}
+.hd__nav a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+  background:var(--gold);transition:width .3s;
+}
+.hd__nav a:hover{color:var(--gold-lt)}
+.hd__nav a:hover::after{width:100%}
+.hd__side{display:flex;align-items:center;gap:.9rem}
+.hd__cta{padding:.72em 1.5em;font-size:.64rem}
+
+.lang{display:flex;gap:.2rem}
+.lang button{
+  background:none;border:1px solid transparent;color:rgba(237,231,218,.45);
+  font-family:inherit;font-size:.63rem;letter-spacing:.14em;
+  padding:.35em .6em;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.lang button[aria-pressed="true"]{color:var(--gold);border-color:rgba(216,178,92,.4)}
+
+.burger{display:none;background:none;border:0;cursor:pointer;padding:.5rem;width:38px}
+.burger span{display:block;height:1px;background:var(--paper);margin:5px 0;transition:transform .3s,opacity .3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.drawer{
+  position:fixed;inset:0;z-index:55;
+  background:rgba(6,9,21,.97);backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;justify-content:center;gap:.4rem;
+  padding:5rem var(--pad) 3rem;
+  opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;
+}
+.drawer.is-open{opacity:1;visibility:visible}
+.drawer a{
+  font-family:"Prata",Georgia,serif;font-size:clamp(1.6rem,7vw,2.4rem);
+  text-decoration:none;color:var(--paper);padding:.35rem 0;
+  border-bottom:1px solid rgba(216,178,92,.12);
+}
+.drawer a:last-of-type{border-bottom:0}
+
+/* ============ hero ============ */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;isolation:isolate;
+}
+.hero__sky{
+  position:absolute;top:-14px;left:-14px;
+  width:calc(100% + 28px);height:calc(100% + 28px);
+  display:block;z-index:0;
+}
+.hero__flash{
+  position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:screen;
+  opacity:var(--flash);
+  background:radial-gradient(64vmax 64vmax at var(--fx) var(--fy),
+    rgba(255,238,196,.3), rgba(242,223,168,.07) 44%, rgba(242,223,168,0) 70%);
+}
+.hero__skyline{
+  position:absolute;left:0;right:0;bottom:-1px;z-index:2;
+  width:100%;height:auto;pointer-events:none;
+  color:color-mix(in srgb, #04060E, var(--gold) calc(var(--flash) * 16%));
+}
+.hero__inner{
+  position:relative;z-index:3;
+  width:min(1080px,90vw);
+  padding:clamp(6rem,13vh,9rem) 0 clamp(7rem,15vh,10rem);
+  text-align:center;
+}
+.hero .eyebrow{margin-bottom:clamp(1.3rem,4vh,2.2rem)}
+.hero .eyebrow::before{width:clamp(20px,5vw,46px)}
+.hero .eyebrow::after{
+  content:"";width:clamp(20px,5vw,46px);height:1px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+}
+
+.title{font-weight:400;line-height:1}
+.title__sm{
+  display:block;font-weight:200;
+  font-size:clamp(.7rem,2.1vw,1.05rem);
+  letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;
+  color:rgba(237,231,218,.72);
+}
+.title__lg{
+  display:block;font-family:"Prata",Georgia,serif;
+  font-size:clamp(3rem,11.5vw,8.4rem);
+  line-height:.94;letter-spacing:-.015em;margin:.06em 0 .1em;
+  background:linear-gradient(178deg,#FFF6E2 8%,var(--gold-lt) 42%,var(--gold) 92%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 0 calc(var(--flash) * 34px) rgba(255,230,175,.55));
+}
+.hero .lede{margin-inline:auto;max-width:52ch}
+
+.meta{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:clamp(.7rem,2.4vw,1.6rem);margin-top:clamp(1.6rem,4vh,2.2rem);
+  font-size:clamp(.72rem,1.8vw,.84rem);
+  letter-spacing:.16em;text-transform:uppercase;color:rgba(237,231,218,.78);
+}
+.meta span{white-space:nowrap}
+.meta i{font-style:normal;color:var(--gold);font-size:.55em;transform:translateY(-1px)}
+
+.count{
+  margin-top:clamp(2.2rem,5.5vh,3.4rem);
+  display:inline-grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(1rem,4vw,3.2rem);
+}
+.count__label{
+  grid-column:1/-1;font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;
+  color:rgba(216,178,92,.8);padding-bottom:.85rem;
+  border-bottom:1px solid rgba(216,178,92,.26);
+}
+.count__cell{display:flex;flex-direction:column;align-items:center;gap:.45rem}
+.count__num{
+  font-family:"Prata",Georgia,serif;font-size:clamp(1.9rem,6vw,3.4rem);
+  line-height:1;color:var(--paper);font-variant-numeric:tabular-nums;
+}
+.count__unit{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(237,231,218,.5)}
+
+.actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:clamp(2.2rem,5.5vh,3.2rem)}
+.hint{
+  position:absolute;z-index:3;left:50%;bottom:2rem;transform:translateX(-50%);
+  font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(237,231,218,.4);animation:breathe 4.2s ease-in-out infinite;
+  pointer-events:none;text-align:center;
+}
+@keyframes breathe{0%,100%{opacity:.3}50%{opacity:.8}}
+
+/* ============ charter ============ */
+.charter{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.6rem,4vw,3.4rem);margin-top:3.4rem}
+.art{border-top:1px solid var(--line);padding-top:1.6rem}
+.art__no{
+  font-family:"Prata",Georgia,serif;font-size:.8rem;letter-spacing:.28em;
+  color:var(--gold);text-transform:uppercase;
+}
+.art__t{font-family:"Prata",Georgia,serif;font-size:clamp(1.15rem,2.3vw,1.5rem);margin:.8rem 0 .7rem}
+.art__d{color:var(--dim);font-size:.94rem}
+
+/* ============ honorees ============ */
+.hon__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem}
+.rail{
+  display:flex;gap:1.1rem;margin-top:3rem;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:1.4rem;
+  scrollbar-width:thin;scrollbar-color:rgba(216,178,92,.35) transparent;
+}
+.rail::-webkit-scrollbar{height:2px}
+.rail::-webkit-scrollbar-thumb{background:rgba(216,178,92,.35)}
+.card{
+  flex:0 0 clamp(210px,23vw,258px);scroll-snap-align:start;
+  background:linear-gradient(170deg,var(--ink-3),var(--ink-2));
+  border:1px solid rgba(216,178,92,.16);
+  padding:1.5rem 1.4rem 1.7rem;
+  display:flex;flex-direction:column;gap:1.1rem;
+  transition:border-color .35s,transform .35s;
+}
+.card:hover{border-color:rgba(216,178,92,.45);transform:translateY(-4px)}
+.card__mono{width:64px;height:64px;font-size:1.05rem}
+.card__yr{
+  margin-top:auto;font-size:.58rem;letter-spacing:.28em;
+  color:rgba(216,178,92,.7);text-transform:uppercase;
+}
+.card__n{font-family:"Prata",Georgia,serif;font-size:1.12rem;line-height:1.3}
+.card__r{font-size:.78rem;color:var(--dim);letter-spacing:.02em}
+.card--tba{border-style:dashed;border-color:rgba(216,178,92,.22)}
+.card--tba .card__n{color:rgba(237,231,218,.5)}
+
+/* ============ gala ============ */
+.gala{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+.gala__aside{position:sticky;top:6rem}
+.facts{display:grid;gap:1.3rem;margin-top:2.4rem}
+.fact{display:grid;gap:.3rem;border-left:1px solid var(--line);padding-left:1.1rem}
+.fact dt{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(216,178,92,.75)}
+.fact dd{font-size:1.02rem}
+.prog{display:grid}
+.prog__row{
+  display:grid;grid-template-columns:5.4rem 1fr;gap:1.4rem;
+  padding:1.25rem 0;border-top:1px solid rgba(216,178,92,.14);
+  transition:background-color .3s;
+}
+.prog__row:last-child{border-bottom:1px solid rgba(216,178,92,.14)}
+.prog__t{
+  font-family:"Prata",Georgia,serif;font-size:1.02rem;color:var(--gold);
+  font-variant-numeric:tabular-nums;
+}
+.prog__n{font-size:1rem}
+.prog__s{display:block;color:var(--dim);font-size:.85rem;margin-top:.25rem}
+.note{margin-top:1.6rem;font-size:.78rem;color:rgba(237,231,218,.45)}
+
+/* ============ quote ============ */
+.quote{text-align:center;padding-block:clamp(5rem,12vh,9rem)}
+.quote blockquote{
+  font-family:"Prata",Georgia,serif;font-weight:400;
+  font-size:clamp(1.35rem,3.4vw,2.5rem);line-height:1.4;
+  max-width:22ch;margin:0 auto;
+}
+.quote cite{
+  display:block;margin-top:2.2rem;font-style:normal;
+  font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+}
+.quote i{display:block;color:var(--gold);font-style:normal;font-size:.8rem;margin-bottom:1.8rem}
+
+/* ============ team ============ */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.5vw,2rem);margin-top:3.2rem}
+.member{display:flex;flex-direction:column;align-items:center;gap:.9rem;text-align:center}
+.member__mono{width:clamp(64px,9vw,86px);height:clamp(64px,9vw,86px);border-radius:50%;font-size:1.05rem}
+.member__n{font-family:"Prata",Georgia,serif;font-size:.98rem;line-height:1.35}
+.member__r{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(237,231,218,.5)}
+
+/* ============ partners ============ */
+.pt{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:2.8rem}
+.pt__item{
+  flex:1 1 250px;border:1px solid var(--line);padding:2.2rem 1.8rem;
+  display:grid;gap:.7rem;text-decoration:none;transition:border-color .35s,background-color .35s;
+}
+.pt__item:hover{border-color:rgba(216,178,92,.5);background:rgba(216,178,92,.04)}
+.pt__logo{font-family:"Prata",Georgia,serif;font-size:1.3rem;color:var(--gold-lt);letter-spacing:.04em}
+.pt__role{font-size:.78rem;color:var(--dim)}
+
+/* ============ cta ============ */
+.cta{text-align:center;border:1px solid var(--line);padding:clamp(2.6rem,7vw,5rem) var(--pad);
+  background:radial-gradient(120% 140% at 50% 0%,rgba(216,178,92,.09),transparent 62%)}
+.cta .lede{margin-inline:auto}
+.cta .actions{margin-top:2.4rem}
+
+/* ============ footer ============ */
+.ft{border-top:1px solid rgba(216,178,92,.16);background:var(--ink-2);padding:clamp(3rem,7vh,5rem) 0 2rem}
+.ft__grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:clamp(1.8rem,4vw,3rem)}
+.ft__about{max-width:34ch;color:var(--dim);font-size:.88rem;margin-top:1.1rem}
+.ft__ig{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;
+  font-size:.76rem;letter-spacing:.1em;text-decoration:none;color:var(--gold-lt);
+  border-bottom:1px solid rgba(216,178,92,.3);padding-bottom:.2rem;
+}
+.ft h4{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:1.1rem}
+.ft ul{list-style:none;display:grid;gap:.65rem}
+.ft ul a{font-size:.86rem;color:var(--dim);text-decoration:none;transition:color .3s}
+.ft ul a:hover{color:var(--paper)}
+.ft__bot{
+  margin-top:clamp(2.4rem,5vh,3.6rem);padding-top:1.6rem;
+  border-top:1px solid rgba(216,178,92,.12);
+  display:flex;flex-wrap:wrap;gap:1rem 1.6rem;justify-content:space-between;
+  font-size:.74rem;color:rgba(237,231,218,.42);
+}
+.ft__bot nav{display:flex;gap:1.4rem}
+.ft__bot a{text-decoration:none}
+.ft__bot a:hover{color:var(--paper)}
+
+/* ============ reveal ============ */
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);transition-delay:calc(var(--i,0) * 80ms)}
+[data-reveal].is-in{opacity:1;transform:none}
+
+/* ============ responsive ============ */
+@media (max-width:1000px){
+  .hd__nav{display:none}
+  .burger{display:block}
+  .hd__cta{display:none}
+  .charter{grid-template-columns:1fr;gap:2rem}
+  .gala{grid-template-columns:1fr}
+  .gala__aside{position:static}
+  .team{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .ft__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .count{gap:.8rem}
+  .btn{padding:1em 1.6em;font-size:.68rem}
+  .hd__name{display:none}
+  .prog__row{grid-template-columns:4.2rem 1fr;gap:1rem}
+  .ft__grid{grid-template-columns:1fr}
+  .ft__bot{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  .hint{display:none}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="hd" id="hd">
+  <a class="hd__brand" href="index.html">
+    <img class="hd__logo" src="logo.jpg" alt="CID International Organization" width="42" height="42">
+    <span class="hd__name">International<br>Leadership Awards</span>
+  </a>
+  <nav class="hd__nav">
+    <a href="#charter"   data-ru="О премии"  data-en="About">О премии</a>
+    <a href="#honorees"  data-ru="Лауреаты"  data-en="Honorees">Лауреаты</a>
+    <a href="#gala"      data-ru="Церемония" data-en="The Gala">Церемония</a>
+    <a href="#partners"  data-ru="Партнёры"  data-en="Partners">Партнёры</a>
+    <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
+  </nav>
+  <div class="hd__side">
+    <div class="lang">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn--solid hd__cta" href="nominate.html" data-ru="Номинировать" data-en="Nominate">Номинировать</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#charter"   data-ru="О премии"  data-en="About">О премии</a>
+  <a href="#honorees"  data-ru="Лауреаты"  data-en="Honorees">Лауреаты</a>
+  <a href="#gala"      data-ru="Церемония" data-en="The Gala">Церемония</a>
+  <a href="#partners"  data-ru="Партнёры"  data-en="Partners">Партнёры</a>
+  <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
+  <a href="nominate.html" style="color:var(--gold)" data-ru="Номинировать" data-en="Nominate">Номинировать</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <canvas class="hero__sky" id="sky" aria-hidden="true"></canvas>
+  <div class="hero__flash" aria-hidden="true"></div>
+
+  <!-- Душанбе: Гиссарская долина, монумент Исмоили Сомони в центре -->
+  <svg class="hero__skyline" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g fill="currentColor">
+
+      <!-- Гиссарский хребет: дальняя гряда -->
+      <path opacity=".2" d="M0 170V108L44 92 84 100 152 52 196 74 232 64 328 104 372 86 398 94 470 40 540 78 566 68 604 82 690 46 730 70 798 58 846 96 884 78 952 44 1014 80 1042 70 1128 102 1176 72 1206 84 1288 48 1350 86 1394 74 1440 90V170Z"/>
+      <!-- Гиссарский хребет: ближняя гряда -->
+      <path opacity=".4" d="M0 170V134L52 118 96 128 158 100 190 116 260 94 292 110 314 102 396 130 442 112 470 120 548 98 598 122 636 110 704 128 756 102 782 114 858 96 906 120 942 108 1020 130 1068 106 1096 118 1178 98 1230 124 1272 112 1348 132 1398 110 1440 122V170Z"/>
+
+      <!-- жилые кварталы -->
+      <rect x="0" y="128" width="86" height="42"/>
+      <rect x="82" y="140" width="54" height="30"/>
+      <rect x="140" y="134" width="34" height="36"/>
+
+      <!-- чайхона «Рохат»: вынесенный навес на резных колоннах -->
+      <g transform="translate(285 0)">
+        <path d="M140 126h130l-11 13H151z"/>
+        <rect x="158" y="139" width="7" height="25"/>
+        <rect x="187" y="139" width="7" height="25"/>
+        <rect x="216" y="139" width="7" height="25"/>
+        <rect x="245" y="139" width="7" height="25"/>
+        <rect x="146" y="163" width="118" height="7"/>
+      </g>
+
+      <!-- театр оперы и балета им. С. Айни -->
+      <g transform="translate(240 0)">
+        <path d="M330 104 384 82l54 22z"/>
+        <rect x="330" y="104" width="108" height="9"/>
+        <rect x="336" y="113" width="8" height="45"/>
+        <rect x="358" y="113" width="8" height="45"/>
+        <rect x="380" y="113" width="8" height="45"/>
+        <rect x="402" y="113" width="8" height="45"/>
+        <rect x="424" y="113" width="8" height="45"/>
+        <rect x="326" y="158" width="116" height="12"/>
+      </g>
+
+      <!-- низкая застройка на месте монумента -->
+      <rect x="188" y="144" width="52" height="26"/>
+      <rect x="236" y="132" width="30" height="38"/>
+      <rect x="272" y="140" width="64" height="30"/>
+      <rect x="330" y="126" width="26" height="44"/>
+      <rect x="362" y="146" width="48" height="24"/>
+
+      <rect x="692" y="138" width="54" height="32"/>
+      <rect x="722" y="118" width="30" height="52"/>
+
+      <!-- Дворец Нации (Қасри Миллат) -->
+      <rect x="752" y="128" width="196" height="42"/>
+      <rect x="778" y="110" width="144" height="60"/>
+      <rect x="822" y="94" width="56" height="30"/>
+      <path d="M822 96Q850 22 878 96Z"/>
+      <rect x="848" y="42" width="4" height="18"/>
+      <circle cx="850" cy="40" r="4"/>
+
+      <!-- душанбинский флагшток -->
+      <rect x="978" y="32" width="6" height="138"/>
+      <path d="M984 38q30 12 60 0v30q-30 12-60 0z"/>
+      <rect x="966" y="158" width="30" height="12"/>
+
+      <rect x="1006" y="142" width="38" height="28"/>
+
+      <!-- монумент Исмоили Сомони: арка с короной и фигурой на пьедестале -->
+      <g transform="translate(779 64.6) scale(.62)">
+        <rect x="452" y="160" width="196" height="10"/>
+        <rect x="472" y="152" width="156" height="8"/>
+        <path fill-rule="evenodd" d="M486 152V90H476V78H498V64H602V78H624V90H614V152ZM522 152V130Q522 100 550 94 578 100 578 130V152Z"/>
+        <rect x="506" y="48" width="88" height="16"/>
+        <path d="M508 48 514 34 520 48 526 30 532 48 538 26 544 48 550 12 556 48 562 26 568 48 574 30 580 48 586 34 592 48Z"/>
+        <rect x="538" y="142" width="24" height="10"/>
+        <path d="M542 142 544 124q6-6 12 0l2 18z"/>
+        <circle cx="550" cy="118" r="5"/>
+        <rect x="554" y="126" width="8" height="4"/>
+        <rect x="560" y="112" width="3" height="30"/>
+      </g>
+
+      <!-- Кохи Навруз -->
+      <rect x="1200" y="140" width="116" height="30"/>
+      <rect x="1194" y="132" width="128" height="8"/>
+      <rect x="1202" y="124" width="8" height="8"/>
+      <rect x="1226" y="124" width="8" height="8"/>
+      <rect x="1250" y="124" width="8" height="8"/>
+      <rect x="1274" y="124" width="8" height="8"/>
+      <rect x="1298" y="124" width="8" height="8"/>
+
+      <!-- современная башня -->
+      <rect x="1338" y="100" width="36" height="70"/>
+      <rect x="1348" y="90" width="16" height="10"/>
+      <rect x="1354" y="78" width="4" height="12"/>
+
+      <rect x="1386" y="132" width="54" height="38"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <p class="eyebrow" data-ru="Церемония 2026 · Душанбе" data-en="The 2026 Ceremony · Dushanbe">Церемония 2026 · Душанбе</p>
+
+    <h1 class="title">
+      <span class="title__sm">International</span>
+      <span class="title__lg">Leadership</span>
+      <span class="title__sm">Awards</span>
+    </h1>
+
+    <p class="lede"
+       data-ru="Вечер в честь предпринимателей, врачей и создателей — тех, кто задаёт стандарт работы в регионе и за его пределами."
+       data-en="An evening for the founders, doctors and makers setting the standard of work in the region and beyond.">Вечер в честь предпринимателей, врачей и создателей — тех, кто задаёт стандарт работы в регионе и за его пределами.</p>
+
+    <p class="meta">
+      <span data-ru="11–12 сентября 2026" data-en="11–12 September 2026">11–12 сентября 2026</span><i>◆</i>
+      <span data-ru="Hyatt Regency Душанбе" data-en="Hyatt Regency Dushanbe">Hyatt Regency Душанбе</span><i>◆</i>
+      <span data-ru="По приглашениям" data-en="By invitation">По приглашениям</span>
+    </p>
+
+    <div class="count">
+      <p class="count__label" data-ru="До церемонии" data-en="Until the ceremony">До церемонии</p>
+      <div class="count__cell"><span class="count__num" id="d">00</span><span class="count__unit" data-ru="дней" data-en="days">дней</span></div>
+      <div class="count__cell"><span class="count__num" id="h">00</span><span class="count__unit" data-ru="часов" data-en="hours">часов</span></div>
+      <div class="count__cell"><span class="count__num" id="m">00</span><span class="count__unit" data-ru="минут" data-en="minutes">минут</span></div>
+      <div class="count__cell"><span class="count__num" id="s">00</span><span class="count__unit" data-ru="секунд" data-en="seconds">секунд</span></div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn--solid" href="nominate.html" data-ru="Выдвинуть номинанта" data-en="Submit a nomination">Выдвинуть номинанта</a>
+      <a class="btn btn--ghost" href="#gala" data-ru="Программа вечера" data-en="See the programme">Программа вечера</a>
+    </div>
+  </div>
+
+  <p class="hint" data-ru="Коснитесь неба — запустится залп" data-en="Tap the sky to launch a firework">Коснитесь неба — запустится залп</p>
+</section>
+
+<main>
+
+<!-- ===================== CHARTER ===================== -->
+<section class="section" id="charter">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal data-ru="Устав" data-en="The Charter">Устав</p>
+    <h2 class="h2" data-reveal style="--i:1" data-ru="Не приз, а стандарт" data-en="Not a prize — a standard">Не приз, а стандарт</h2>
+    <p class="lede" data-reveal style="--i:2"
+       data-ru="Три правила, которым подчинён каждый шаг отбора. Мы публикуем их, чтобы к нам можно было предъявить счёт."
+       data-en="Three rules that govern every step of the selection. We publish them so we can be held to them.">Три правила, которым подчинён каждый шаг отбора. Мы публикуем их, чтобы к нам можно было предъявить счёт.</p>
+
+    <div class="charter">
+      <article class="art" data-reveal style="--i:1">
+        <p class="art__no">Статья I</p>
+        <h3 class="art__t" data-ru="Выдвигают со стороны" data-en="Nominated by others">Выдвигают со стороны</h3>
+        <p class="art__d"
+           data-ru="Кандидата предлагает третье лицо — коллега, партнёр, отраслевая ассоциация. Самовыдвижение не рассматривается."
+           data-en="A candidate is put forward by a third party — a colleague, a partner, an industry body. Self-nomination is not reviewed.">Кандидата предлагает третье лицо — коллега, партнёр, отраслевая ассоциация. Самовыдвижение не рассматривается.</p>
+      </article>
+      <article class="art" data-reveal style="--i:2">
+        <p class="art__no">Статья II</p>
+        <h3 class="art__t" data-ru="Регион и мир" data-en="The region and beyond">Регион и мир</h3>
+        <p class="art__d"
+           data-ru="Душанбе как точка сбора: предприниматели Центральной Азии и Кавказа, гости и партнёры из-за рубежа."
+           data-en="Dushanbe as the meeting point: founders from Central Asia and the Caucasus, with guests and partners from abroad.">Душанбе как точка сбора: предприниматели Центральной Азии и Кавказа, гости и партнёры из-за рубежа.</p>
+      </article>
+      <article class="art" data-reveal style="--i:3">
+        <p class="art__no">Статья III</p>
+        <h3 class="art__t" data-ru="Результат, а не заметность" data-en="Outcome, not visibility">Результат, а не заметность</h3>
+        <p class="art__d"
+           data-ru="Смотрим на то, что построено и продолжает работать: клиники, производства, команды, школы."
+           data-en="We look at what was built and still works: clinics, production, teams, schools.">Смотрим на то, что построено и продолжает работать: клиники, производства, команды, школы.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HONOREES ===================== -->
+<section class="section" id="honorees">
+  <div class="wrap">
+    <div class="hon__head">
+      <div>
+        <p class="eyebrow" data-reveal data-ru="Лауреаты 2026" data-en="The 2026 class">Лауреаты 2026</p>
+        <h2 class="h2" data-reveal style="--i:1" data-ru="Первый состав" data-en="The inaugural class">Первый состав</h2>
+        <p class="lede" data-reveal style="--i:2"
+           data-ru="Девять имён подтверждены. Полный список объявим за две недели до церемонии."
+           data-en="Nine names are confirmed. The full list is announced two weeks before the ceremony.">Девять имён подтверждены. Полный список объявим за две недели до церемонии.</p>
+      </div>
+      <a class="btn btn--ghost" href="honorees.html" data-reveal style="--i:3" data-ru="Все лауреаты" data-en="All honorees">Все лауреаты</a>
+    </div>
+
+    <div class="rail" id="rail" data-reveal style="--i:2">
+      <article class="card">
+        <span class="mono card__mono">VJ</span>
+        <div><p class="card__n">Dr. Vafa Jalilova</p>
+          <p class="card__r" data-ru="Основатель и медицинский директор клиники" data-en="Founder & Medical Director">Основатель и медицинский директор клиники</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">EH</span>
+        <div><p class="card__n">Elyor Hasanov</p>
+          <p class="card__r" data-ru="Основатель и CEO, Hollywood Smile" data-en="Founder & CEO, Hollywood Smile">Основатель и CEO, Hollywood Smile</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">TQ</span>
+        <div><p class="card__n">Temur Qodirov</p>
+          <p class="card__r" data-ru="Основатель, World Print" data-en="Founder, World Print">Основатель, World Print</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">EA</span>
+        <div><p class="card__n">Emel Avcı</p>
+          <p class="card__r" data-ru="Директор, ESOLA" data-en="Director, ESOLA">Директор, ESOLA</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">SA</span>
+        <div><p class="card__n">Shahla Arabova</p>
+          <p class="card__r" data-ru="Основатель, Art House Demure" data-en="Founder, Art House Demure">Основатель, Art House Demure</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">AX</span>
+        <div><p class="card__n">Asliddin Xalimov</p>
+          <p class="card__r" data-ru="Основатель, Royal Catering" data-en="Founder, Royal Catering">Основатель, Royal Catering</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">MA</span>
+        <div><p class="card__n">Maria Alexsandrovna</p>
+          <p class="card__r" data-ru="Основатель, WOMAN BRAND LAB" data-en="Founder, WOMAN BRAND LAB">Основатель, WOMAN BRAND LAB</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">SM</span>
+        <div><p class="card__n">Sanjar Mirakhmedov</p>
+          <p class="card__r" data-ru="Винодел" data-en="Winemaker">Винодел</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card">
+        <span class="mono card__mono">MF</span>
+        <div><p class="card__n">Matias Ferreira</p>
+          <p class="card__r" data-ru="Специальный гость церемонии" data-en="Special guest of the ceremony">Специальный гость церемонии</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+      <article class="card card--tba">
+        <span class="mono card__mono">·</span>
+        <div><p class="card__n" data-ru="Будет объявлено" data-en="To be announced">Будет объявлено</p>
+          <p class="card__r" data-ru="Имена раскроем перед церемонией" data-en="Names revealed before the ceremony">Имена раскроем перед церемонией</p></div>
+        <p class="card__yr">2026</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALA ===================== -->
+<section class="section" id="gala">
+  <div class="wrap gala">
+    <div class="gala__aside">
+      <p class="eyebrow" data-reveal data-ru="Церемония" data-en="The ceremony">Церемония</p>
+      <h2 class="h2" data-reveal style="--i:1" data-ru="Вечер 11 сентября" data-en="The evening of 11 September">Вечер 11 сентября</h2>
+      <dl class="facts" data-reveal style="--i:2">
+        <div class="fact">
+          <dt data-ru="Даты" data-en="Dates">Даты</dt>
+          <dd data-ru="11–12 сентября 2026" data-en="11–12 September 2026">11–12 сентября 2026</dd>
+        </div>
+        <div class="fact">
+          <dt data-ru="Площадка" data-en="Venue">Площадка</dt>
+          <dd>Hyatt Regency Dushanbe</dd>
+        </div>
+        <div class="fact">
+          <dt data-ru="Формат" data-en="Format">Формат</dt>
+          <dd data-ru="Чёрный галстук, по приглашениям" data-en="Black tie, by invitation">Чёрный галстук, по приглашениям</dd>
+        </div>
+        <div class="fact">
+          <dt data-ru="Языки вечера" data-en="Languages">Языки вечера</dt>
+          <dd data-ru="Русский, узбекский, английский" data-en="Russian, Uzbek, English">Русский, узбекский, английский</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="prog" data-reveal style="--i:2">
+      <div class="prog__row">
+        <span class="prog__t">18:00</span>
+        <span class="prog__n" data-ru="Приём и знакомство" data-en="Reception">Приём и знакомство
+          <span class="prog__s" data-ru="Фуршет в холле, фотозона, встреча гостей" data-en="Foyer reception, photography, arrivals">Фуршет в холле, фотозона, встреча гостей</span></span>
+      </div>
+      <div class="prog__row">
+        <span class="prog__t">19:00</span>
+        <span class="prog__n" data-ru="Открытие" data-en="Opening">Открытие
+          <span class="prog__s" data-ru="Слово основателя, представление совета" data-en="The founder's address, the board is introduced">Слово основателя, представление совета</span></span>
+      </div>
+      <div class="prog__row">
+        <span class="prog__t">19:40</span>
+        <span class="prog__n" data-ru="Вручение наград" data-en="The awards">Вручение наград
+          <span class="prog__s" data-ru="Лауреаты выходят на сцену по одному, с рассказом о деле" data-en="Honorees take the stage one by one, each with their story">Лауреаты выходят на сцену по одному, с рассказом о деле</span></span>
+      </div>
+      <div class="prog__row">
+        <span class="prog__t">21:00</span>
+        <span class="prog__n" data-ru="Гала-ужин" data-en="Gala dinner">Гала-ужин
+          <span class="prog__s" data-ru="Сет-меню, рассадка по столам" data-en="Set menu, seated by table">Сет-меню, рассадка по столам</span></span>
+      </div>
+      <div class="prog__row">
+        <span class="prog__t">22:00</span>
+        <span class="prog__n" data-ru="Музыкальная программа" data-en="Live programme">Музыкальная программа
+          <span class="prog__s" data-ru="Живой оркестр и приглашённые артисты" data-en="Live orchestra and guest performers">Живой оркестр и приглашённые артисты</span></span>
+      </div>
+      <div class="prog__row">
+        <span class="prog__t">23:00</span>
+        <span class="prog__n" data-ru="Салют" data-en="Fireworks">Салют
+          <span class="prog__s" data-ru="Финал вечера на террасе" data-en="The close of the evening, on the terrace">Финал вечера на террасе</span></span>
+      </div>
+      <p class="note" data-ru="Программа предварительная. Точный тайминг разошлём вместе с приглашением."
+         data-en="The programme is provisional. Final timings are sent with the invitation.">Программа предварительная. Точный тайминг разошлём вместе с приглашением.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUOTE ===================== -->
+<section class="section quote">
+  <div class="wrap" data-reveal>
+    <i>◆</i>
+    <blockquote data-ru="Награда — не за то, чем вы владеете. За то, что вы изменили."
+                data-en="The honor is not for what you own. It is for what you changed.">Награда — не за то, чем вы владеете. За то, что вы изменили.</blockquote>
+    <cite data-ru="Из учредительного заявления ILA" data-en="From the founding statement of the ILA">Из учредительного заявления ILA</cite>
+  </div>
+</section>
+
+<!-- ===================== TEAM ===================== -->
+<section class="section" id="team">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal data-ru="Команда" data-en="The team">Команда</p>
+    <h2 class="h2" data-reveal style="--i:1" data-ru="Кто делает премию" data-en="Who runs the awards">Кто делает премию</h2>
+    <p class="lede" data-reveal style="--i:2"
+       data-ru="Организаторы и амбассадоры, которые собирают вечер и отвечают за отбор."
+       data-en="The organisers and ambassadors who put the evening together and answer for the selection.">Организаторы и амбассадоры, которые собирают вечер и отвечают за отбор.</p>
+
+    <div class="team">
+      <div class="member" data-reveal style="--i:1"><span class="mono member__mono">NK</span>
+        <p class="member__n">Nilufar Khudoyberdiyeva</p><p class="member__r" data-ru="Основатель" data-en="Founder">Основатель</p></div>
+      <div class="member" data-reveal style="--i:2"><span class="mono member__mono">SB</span>
+        <p class="member__n">Sabina Bekmurodova</p><p class="member__r" data-ru="Амбассадор" data-en="Ambassador">Амбассадор</p></div>
+      <div class="member" data-reveal style="--i:3"><span class="mono member__mono">NM</span>
+        <p class="member__n">Negina Mukhtarova</p><p class="member__r" data-ru="Амбассадор" data-en="Ambassador">Амбассадор</p></div>
+      <div class="member" data-reveal style="--i:4"><span class="mono member__mono">SM</span>
+        <p class="member__n">Salay Matkarimov</p><p class="member__r" data-ru="Амбассадор" data-en="Ambassador">Амбассадор</p></div>
+      <div class="member" data-reveal style="--i:1"><span class="mono member__mono">MY</span>
+        <p class="member__n">Madina Yarasheva</p><p class="member__r" data-ru="Маркетинг" data-en="Marketing Lead">Маркетинг</p></div>
+      <div class="member" data-reveal style="--i:2"><span class="mono member__mono">LE</span>
+        <p class="member__n">Leyla Elman</p><p class="member__r" data-ru="Представитель" data-en="Global Representative">Представитель</p></div>
+      <div class="member" data-reveal style="--i:3"><span class="mono member__mono">SN</span>
+        <p class="member__n">Sarvinoz Ne'matova</p><p class="member__r" data-ru="Работа с гостями" data-en="Client Relations">Работа с гостями</p></div>
+      <div class="member" data-reveal style="--i:4"><span class="mono member__mono">LP</span>
+        <p class="member__n">Liliiya Polina, MBA</p><p class="member__r" data-ru="Представитель" data-en="Global Representative">Представитель</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTNERS ===================== -->
+<section class="section" id="partners">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal data-ru="Партнёры" data-en="Partners">Партнёры</p>
+    <h2 class="h2" data-reveal style="--i:1" data-ru="С кем делаем вечер" data-en="Who we work with">С кем делаем вечер</h2>
+    <p class="lede" data-reveal style="--i:2"
+       data-ru="Двое партнёров подтверждены на 2026 год. Пакеты на церемонию ещё открыты."
+       data-en="Two partners are confirmed for 2026. Packages for the ceremony are still open.">Двое партнёров подтверждены на 2026 год. Пакеты на церемонию ещё открыты.</p>
+
+    <div class="pt">
+      <a class="pt__item" href="partners.html#worldprint" data-reveal style="--i:1">
+        <span class="pt__logo">World Print</span>
+        <span class="pt__role" data-ru="Наружная реклама и производство" data-en="Outdoor advertising and production">Наружная реклама и производство</span>
+      </a>
+      <a class="pt__item" href="partners.html#themag" data-reveal style="--i:2">
+        <span class="pt__logo">THE MAG</span>
+        <span class="pt__role" data-ru="Медиапартнёр" data-en="Media partner">Медиапартнёр</span>
+      </a>
+      <a class="pt__item" href="contact.html?type=partner" data-reveal style="--i:3">
+        <span class="pt__logo" style="color:var(--gold)" data-ru="Ваше место" data-en="Your place">Ваше место</span>
+        <span class="pt__role" data-ru="Партнёрские пакеты церемонии 2026" data-en="Partnership packages for the 2026 ceremony">Партнёрские пакеты церемонии 2026</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <p class="eyebrow" data-ru="Номинации открыты" data-en="Nominations open">Номинации открыты</p>
+      <h2 class="h2" data-ru="Знаете человека, чьё дело стоит награды?" data-en="Know someone whose work deserves the honor?">Знаете человека, чьё дело стоит награды?</h2>
+      <p class="lede" data-ru="Заявка занимает пять минут. Совет рассматривает её конфиденциально."
+         data-en="A nomination takes five minutes. The board reviews it confidentially.">Заявка занимает пять минут. Совет рассматривает её конфиденциально.</p>
+      <div class="actions">
+        <a class="btn btn--solid" href="nominate.html" data-ru="Выдвинуть номинанта" data-en="Submit a nomination">Выдвинуть номинанта</a>
+        <a class="btn btn--ghost" href="contact.html" data-ru="Связаться с командой" data-en="Speak with the team">Связаться с командой</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__grid">
+      <div>
+        <a class="hd__brand" href="index.html">
+          <img class="hd__logo" src="logo.jpg" alt="CID International Organization" width="42" height="42">
+          <span class="hd__name">International<br>Leadership Awards</span>
+        </a>
+        <p class="ft__about" data-ru="Премия и гала-церемония в Душанбе, отмечающая предпринимателей и специалистов, чья работа меняет регион."
+           data-en="An awards programme and gala in Dushanbe, recognising founders and professionals whose work changes the region.">Премия и гала-церемония в Душанбе, отмечающая предпринимателей и специалистов, чья работа меняет регион.</p>
+        <a class="ft__ig" href="https://www.instagram.com/i.leadershipawards" target="_blank" rel="noopener">@i.leadershipawards</a>
+      </div>
+
+      <div>
+        <h4 data-ru="Премия" data-en="The awards">Премия</h4>
+        <ul>
+          <li><a href="about.html" data-ru="О премии" data-en="About ILA">О премии</a></li>
+          <li><a href="honorees.html" data-ru="Лауреаты" data-en="Honorees">Лауреаты</a></li>
+          <li><a href="about.html#team" data-ru="Команда" data-en="Our team">Команда</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-ru="Церемония" data-en="The gala">Церемония</h4>
+        <ul>
+          <li><a href="gala.html" data-ru="О вечере" data-en="Event overview">О вечере</a></li>
+          <li><a href="gala.html#agenda" data-ru="Программа" data-en="Programme">Программа</a></li>
+          <li><a href="gala.html#venue" data-ru="Площадка" data-en="Venue">Площадка</a></li>
+          <li><a href="partners.html" data-ru="Партнёры" data-en="Partners">Партнёры</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-ru="Участие" data-en="Engage">Участие</h4>
+        <ul>
+          <li><a href="nominate.html" data-ru="Выдвинуть номинанта" data-en="Submit a nomination">Выдвинуть номинанта</a></li>
+          <li><a href="contact.html?type=ticket" data-ru="Забронировать стол" data-en="Reserve a table">Забронировать стол</a></li>
+          <li><a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+          <li><a href="contact.html?type=press" data-ru="Для прессы" data-en="Media enquiries">Для прессы</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft__bot">
+      <p>© 2026 International Leadership Awards</p>
+      <nav>
+        <a href="privacy.html" data-ru="Конфиденциальность" data-en="Privacy">Конфиденциальность</a>
+        <a href="terms.html" data-ru="Условия" data-en="Terms">Условия</a>
+        <a href="conduct.html" data-ru="Кодекс поведения" data-en="Code of conduct">Кодекс поведения</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  "use strict";
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------------- язык ---------------- */
+  const setLang = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-ru]").forEach(el => {
+      const v = el.getAttribute("data-" + lang);
+      if (!v) return;
+      const sub = el.querySelector(".prog__s");
+      if (sub) { el.firstChild.nodeValue = v; return; }
+      el.textContent = v;
+    });
+    document.querySelectorAll(".lang button").forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    try { document.title = lang === "ru"
+      ? "International Leadership Awards — Душанбе, 11–12 сентября 2026"
+      : "International Leadership Awards — Dushanbe, 11–12 September 2026"; } catch (e) {}
+  };
+  document.querySelectorAll(".lang button").forEach(b =>
+    b.addEventListener("click", () => setLang(b.dataset.lang)));
+  setLang("ru");
+
+  /* ---------------- шапка ---------------- */
+  const hd = document.getElementById("hd");
+  const onScroll = () => hd.classList.toggle("is-stuck", scrollY > 40);
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  const burger = document.getElementById("burger"), drawer = document.getElementById("drawer");
+  const closeDrawer = () => { burger.setAttribute("aria-expanded", "false"); drawer.classList.remove("is-open"); document.body.style.overflow = ""; };
+  burger.addEventListener("click", () => {
+    const open = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!open));
+    drawer.classList.toggle("is-open", !open);
+    document.body.style.overflow = open ? "" : "hidden";
+  });
+  drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
+  addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+
+  /* ---------------- появление секций ---------------- */
+  if (!reduce) {
+    const io = new IntersectionObserver((es, o) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); o.unobserve(e.target); } });
+    }, { threshold: .15, rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll("[data-reveal]").forEach(el => el.classList.add("is-in"));
+  }
+
+  /* ---------------- горизонтальная лента колесом ---------------- */
+  const rail = document.getElementById("rail");
+  rail.addEventListener("wheel", e => {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    const max = rail.scrollWidth - rail.clientWidth;
+    if ((rail.scrollLeft <= 0 && e.deltaY < 0) || (rail.scrollLeft >= max - 1 && e.deltaY > 0)) return;
+    e.preventDefault(); rail.scrollLeft += e.deltaY;
+  }, { passive: false });
+
+  /* ---------------- обратный отсчёт ---------------- */
+  const TARGET = new Date("2026-09-11T19:00:00+05:00").getTime();
+  const pad = n => String(n).padStart(2, "0");
+  const E = { d: document.getElementById("d"), h: document.getElementById("h"),
+              m: document.getElementById("m"), s: document.getElementById("s") };
+  const tick = () => {
+    let left = Math.max(0, TARGET - Date.now()) / 1000 | 0;
+    E.d.textContent = pad(left / 86400 | 0);
+    E.h.textContent = pad((left / 3600 | 0) % 24);
+    E.m.textContent = pad((left / 60 | 0) % 60);
+    E.s.textContent = pad(left % 60);
+  };
+  tick(); setInterval(tick, 1000);
+
+  /* ================= салют ================= */
+  const hero = document.getElementById("hero");
+  const cv   = document.getElementById("sky");
+  const ctx  = cv.getContext("2d", { alpha: false });
+
+  const skyCv = document.createElement("canvas"), skyCtx = skyCv.getContext("2d");
+  const fxCv  = document.createElement("canvas"), fxCtx  = fxCv.getContext("2d");
+  const blCv  = document.createElement("canvas"), blCtx  = blCv.getContext("2d");
+
+  let W = 0, H = 0, DPR = 1, mobile = false, budget = 2500, scale = 1;
+
+  const C = { gold:[255,224,154], amber:[242,176,86], turq:[120,226,214],
+              lapis:[150,180,245], white:[255,248,232] };
+  const PICK = ["gold","gold","gold","gold","gold","amber","white","turq","lapis"];
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const pickC = () => C[PICK[Math.random() * PICK.length | 0]];
+
+  const shells = [], parts = [], waves = [], embers = [];
+  let flash = 0, fx = 50, fy = 35, lastFlash = -1;
+
+  function buildSky() {
+    skyCv.width = cv.width; skyCv.height = cv.height;
+    const w = cv.width, h = cv.height;
+    const g = skyCtx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, "#04060E"); g.addColorStop(.42, "#0A1130");
+    g.addColorStop(.78, "#122148"); g.addColorStop(1, "#1B2E5E");
+    skyCtx.fillStyle = g; skyCtx.fillRect(0, 0, w, h);
+    const glow = skyCtx.createRadialGradient(w * .5, h, 0, w * .5, h, h * .62);
+    glow.addColorStop(0, "rgba(216,178,92,.22)"); glow.addColorStop(1, "rgba(216,178,92,0)");
+    skyCtx.fillStyle = glow; skyCtx.fillRect(0, 0, w, h);
+    const stars = Math.round((w * h) / (16000 * DPR));
+    for (let i = 0; i < stars; i++) {
+      const x = Math.random() * w, y = Math.random() * h * .82;
+      const r = Math.random() * 1.5 * DPR + .3 * DPR;
+      const a = rnd(.12, .8) * (1 - y / (h * 1.15));
+      skyCtx.fillStyle = `rgba(255,248,232,${a})`;
+      skyCtx.beginPath(); skyCtx.arc(x, y, r, 0, 6.284); skyCtx.fill();
+    }
+  }
+
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = hero.clientWidth + 28; H = hero.clientHeight + 28;
+    mobile = W < 780;
+    budget = mobile ? 900 : 2500;
+    scale  = Math.min(1.2, Math.max(.55, H / 860));
+    for (const c of [cv, fxCv]) { c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); }
+    cv.style.width = W + "px"; cv.style.height = H + "px";
+    blCv.width  = Math.max(2, Math.round(W * DPR / 6));
+    blCv.height = Math.max(2, Math.round(H * DPR / 6));
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    fxCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    buildSky();
+    embers.length = 0;
+    for (let i = 0, n = mobile ? 12 : 26; i < n; i++)
+      embers.push({ x: Math.random() * W, y: Math.random() * H,
+                    v: rnd(6, 17), s: rnd(.6, 1.4), p: Math.random() * 6.28, a: rnd(.12, .38) });
+  }
+
+  function spawn(x, y, vx, vy, col, life, size, grav, drag, flick) {
+    if (parts.length > budget) return;
+    parts.push({ x, y, px: x, py: y, vx, vy, r: col[0], g: col[1], b: col[2],
+                 life, max: life, size, grav, drag, flick });
+  }
+  const shock = (x, y, max, col) => waves.push({ x, y, r: 6, max, life: .42, max2: .42, col });
+
+  function burst(x, y, kind, col, power) {
+    const p = (power || 1) * scale;
+    const n = k => Math.max(10, Math.round(k * (mobile ? .5 : 1) * p));
+    const S = v => v * p;
+
+    if (kind === "chrys") {
+      for (let i = 0, c = n(150); i < c; i++) {
+        const a = Math.random() * 6.284, sp = S(rnd(100, 320)) * (Math.random() < .25 ? .6 : 1);
+        spawn(x, y, Math.cos(a) * sp, Math.sin(a) * sp, col, rnd(1.9, 2.9), rnd(1.5, 2.7), 90, 1, Math.random() < .1);
+      }
+      for (let i = 0, c = n(40); i < c; i++) {
+        const a = Math.random() * 6.284, sp = S(rnd(28, 100));
+        spawn(x, y, Math.cos(a) * sp, Math.sin(a) * sp, C.white, rnd(1.5, 2.4), rnd(1, 1.7), 72, 1.2, true);
+      }
+      shock(x, y, S(190), col);
+    } else if (kind === "willow") {
+      for (let i = 0, c = n(105); i < c; i++) {
+        const a = Math.random() * 6.284, sp = S(rnd(70, 185));
+        spawn(x, y, Math.cos(a) * sp, Math.sin(a) * sp, C.gold, rnd(2.7, 4), rnd(1.5, 2.6), 44, 1.4, false);
+      }
+    } else if (kind === "ring") {
+      const c = n(76), tilt = rnd(.18, .55), rot = Math.random() * 3.14, sp = S(rnd(190, 265));
+      for (let i = 0; i < c; i++) {
+        const a = (i / c) * 6.284, ux = Math.cos(a) * sp, uy = Math.sin(a) * sp * tilt;
+        spawn(x, y, ux * Math.cos(rot) - uy * Math.sin(rot), ux * Math.sin(rot) + uy * Math.cos(rot),
+              col, rnd(1.5, 2.1), rnd(1.4, 2.3), 88, .95, false);
+      }
+      shock(x, y, S(180), col);
+    } else if (kind === "glitter") {
+      for (let i = 0, c = n(100); i < c; i++) {
+        const a = Math.random() * 6.284, sp = S(rnd(38, 220));
+        spawn(x, y, Math.cos(a) * sp, Math.sin(a) * sp, C.white, rnd(1.6, 2.7), rnd(.9, 1.7), 72, 1.2, true);
+      }
+      for (let i = 0, c = n(50); i < c; i++) {
+        const a = Math.random() * 6.284, sp = S(rnd(140, 250));
+        spawn(x, y, Math.cos(a) * sp, Math.sin(a) * sp, col, rnd(1.3, 1.9), rnd(1.5, 2.4), 94, 1.05, false);
+      }
+    } else {
+      const inner = Math.random() < .35 ? pickC() : col;
+      for (let i = 0, c = n(130); i < c; i++) {
+        const a = Math.random() * 6.284, sp = S(rnd(75, 275));
+        spawn(x, y, Math.cos(a) * sp, Math.sin(a) * sp, col, rnd(1.4, 2.2), rnd(1.4, 2.5), 96, 1.1, Math.random() < .12);
+      }
+      for (let i = 0, c = n(50); i < c; i++) {
+        const a = Math.random() * 6.284, sp = S(rnd(28, 110));
+        spawn(x, y, Math.cos(a) * sp, Math.sin(a) * sp, inner, rnd(1.5, 2.1), rnd(1.3, 2.1), 82, 1.15, false);
+      }
+      shock(x, y, S(170), col);
+    }
+    flash = Math.min(.85, flash + .34 * p);
+    fx = (x / W) * 100; fy = (y / H) * 100;
+  }
+
+  const KINDS = ["peony","peony","peony","chrys","willow","willow","ring","glitter"];
+  const G_SHELL = 330;
+
+  function launch(tx, ty, power) {
+    const x = tx != null ? tx : rnd(W * .1, W * .9);
+    const apex = ty != null ? ty : rnd(H * .1, H * .42);
+    const rise = Math.max(80, H + 14 - apex);
+    shells.push({ x, y: H + 14, px: x, py: H + 14,
+      vx: rnd(-18, 18), vy: -Math.sqrt(2 * G_SHELL * rise),
+      col: pickC(), kind: KINDS[Math.random() * KINDS.length | 0],
+      power: power || rnd(.85, 1.2), puff: 0 });
+  }
+  const salvo = n => { for (let i = 0; i < n; i++)
+    setTimeout(() => launch(rnd(W * .1, W * .9), rnd(H * .1, H * .38), rnd(.9, 1.2)), i * rnd(180, 400)); };
+
+  let raf = 0, prev = 0, next = 1, big = 26, running = false;
+
+  function frame(now) {
+    if (!running) return;
+    const dt = Math.min(.05, (now - prev) / 1000 || .016);
+    prev = now;
+
+    fxCtx.setTransform(1, 0, 0, 1, 0, 0);
+    fxCtx.globalCompositeOperation = "destination-out";
+    fxCtx.fillStyle = "rgba(0,0,0,.135)";
+    fxCtx.fillRect(0, 0, fxCv.width, fxCv.height);
+    fxCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    fxCtx.globalCompositeOperation = "lighter";
+    fxCtx.lineCap = "round";
+
+    if ((next -= dt) <= 0) {
+      launch();
+      if (Math.random() < .3) setTimeout(launch, rnd(260, 520));
+      next = rnd(1.5, 3);
+    }
+    if ((big -= dt) <= 0) { salvo(4); big = rnd(22, 34); }
+
+    for (const e of embers) {
+      e.p += dt * 1.6; e.y -= e.v * dt; e.x += Math.sin(e.p) * 7 * dt;
+      if (e.y < -10) { e.y = H + 10; e.x = Math.random() * W; }
+      fxCtx.fillStyle = `rgba(255,206,140,${e.a * (.5 + .5 * Math.sin(e.p * 2))})`;
+      fxCtx.fillRect(e.x, e.y, e.s, e.s);
+    }
+
+    for (let i = shells.length - 1; i >= 0; i--) {
+      const s = shells[i];
+      s.px = s.x; s.py = s.y;
+      s.vy += G_SHELL * dt; s.x += s.vx * dt; s.y += s.vy * dt;
+      fxCtx.strokeStyle = "rgba(255,222,160,.82)";
+      fxCtx.lineWidth = 2.4;
+      fxCtx.beginPath(); fxCtx.moveTo(s.px, s.py); fxCtx.lineTo(s.x, s.y); fxCtx.stroke();
+      if ((s.puff -= dt) <= 0) {
+        s.puff = .028;
+        spawn(s.x, s.y, rnd(-12, 12), rnd(5, 24), C.amber, rnd(.3, .55), 1.2, 40, 2.2, true);
+      }
+      if (s.vy >= -12) { burst(s.x, s.y, s.kind, s.col, s.power); shells.splice(i, 1); }
+    }
+
+    for (let i = waves.length - 1; i >= 0; i--) {
+      const w = waves[i];
+      if ((w.life -= dt) <= 0) { waves.splice(i, 1); continue; }
+      const t = 1 - w.life / w.max2;
+      w.r = 6 + w.max * (1 - Math.pow(1 - t, 2.6));
+      fxCtx.strokeStyle = `rgba(${w.col[0]},${w.col[1]},${w.col[2]},${(1 - t) * .2})`;
+      fxCtx.lineWidth = 3 * (1 - t) + .35;
+      fxCtx.beginPath(); fxCtx.arc(w.x, w.y, w.r, 0, 6.284); fxCtx.stroke();
+    }
+
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const p = parts[i];
+      if ((p.life -= dt) <= 0) { parts.splice(i, 1); continue; }
+      const f = Math.max(0, 1 - p.drag * dt);
+      p.vx *= f; p.vy = p.vy * f + p.grav * dt;
+      p.px = p.x; p.py = p.y;
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      const t = p.life / p.max;
+      let a = t < .8 ? t * 1.1 : 1;
+      if (p.flick && t < .72) a *= Math.random() < .5 ? 1 : .15;
+      fxCtx.strokeStyle = `rgba(${p.r},${p.g},${p.b},${a})`;
+      fxCtx.lineWidth = p.size * (.4 + t * .6);
+      fxCtx.beginPath(); fxCtx.moveTo(p.px, p.py); fxCtx.lineTo(p.x, p.y); fxCtx.stroke();
+    }
+
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalCompositeOperation = "source-over"; ctx.globalAlpha = 1;
+    ctx.drawImage(skyCv, 0, 0);
+    ctx.globalCompositeOperation = "lighter";
+    ctx.drawImage(fxCv, 0, 0);
+    blCtx.clearRect(0, 0, blCv.width, blCv.height);
+    blCtx.drawImage(fxCv, 0, 0, blCv.width, blCv.height);
+    ctx.globalAlpha = .6;
+    ctx.drawImage(blCv, 0, 0, cv.width, cv.height);
+    ctx.globalAlpha = 1;
+
+    flash *= Math.pow(.08, dt);
+    if (Math.abs(flash - lastFlash) > .012) {
+      lastFlash = flash;
+      hero.style.setProperty("--flash", Math.min(1, flash).toFixed(3));
+      hero.style.setProperty("--fx", fx.toFixed(1) + "%");
+      hero.style.setProperty("--fy", fy.toFixed(1) + "%");
+    }
+    raf = requestAnimationFrame(frame);
+  }
+
+  const start = () => { if (running || reduce) return; running = true; prev = performance.now(); raf = requestAnimationFrame(frame); };
+  const stop  = () => { running = false; cancelAnimationFrame(raf); };
+
+  resize();
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(resize, 180); });
+
+  if (!reduce) {
+    hero.addEventListener("pointerdown", e => {
+      if (e.target.closest("a,button")) return;
+      const r = cv.getBoundingClientRect();
+      launch(e.clientX - r.left, Math.min(e.clientY - r.top, H * .66), 1.3);
+    });
+    new IntersectionObserver(es => es[0].isIntersecting ? start() : stop(), { threshold: .05 }).observe(hero);
+    document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+    setTimeout(() => salvo(2), 700);
+  } else {
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(skyCv, 0, 0);
+  }
+})();
+</script>
+</body>
+</html>
